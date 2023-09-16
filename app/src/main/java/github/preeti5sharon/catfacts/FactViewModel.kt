@@ -9,7 +9,7 @@ import javax.inject.Inject
 @HiltViewModel
 class FactViewModel @Inject constructor(private val repository: FactRepository) : ViewModel() {
     private val pageConfig = PagingConfig(10, 10, false, 10)
-    fun getFacts() = Pager(pageConfig, 0) {
+    fun getFacts() = Pager(pageConfig, 1) {
         FactPagingSource(repository)
     }
 }
